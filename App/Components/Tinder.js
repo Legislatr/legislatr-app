@@ -1,28 +1,44 @@
 import React from 'react'
-import {StyleSheet, Text, View, Image} from 'react-native'
+import {StyleSheet, Text, View, ScrollView, Image, TouchableView, TouchableOpacity} from 'react-native'
 import { Images } from '../Themes'
 import SwipeCards from 'react-native-swipe-cards'
 
 let Card = React.createClass({
-
+  // card needs to have click/touch event handler
+  getInitialState() {
+    return {
+      preview: true
+    }
+  },
+  handlePressPreview() {
+    this.setState({ preview: !this.state.preview })
+  },
   render() {
     return (
-      <View style={styles.card}>
+      <TouchableOpacity style={styles.card} onPress={this.handlePressPreview}>
         <Text style={styles.billTitle}>{this.props.billTitle}</Text>
-        <View style={styles.star}>
-          <Image source={Images.explodingStar} style={styles.starSpace}/>
-          <Text style={styles.billHighlight}>{this.props.billHighlight1}</Text>
-        </View>
-        <View style={[styles.star, styles.bottomMargin]}>
-          <Image source={Images.explodingStar} style={styles.starSpace}/>
-          <Text style={styles.billHighlight}>{this.props.billHighlight2}</Text>
-        </View>
+        {  this.state.preview
+           ?
+                <ScrollView>
+                  <View style={styles.star}>
+                    <Image source={Images.explodingStar} style={styles.starSpace}/>
+                    <Text style={styles.billHighlight}>{this.props.billHighlight1}</Text>
+                  </View>
+                  <View style={[styles.star, styles.bottomMargin]}>
+                    <Image source={Images.explodingStar} style={styles.starSpace}/>
+                    <Text style={styles.billHighlight}>{this.props.billHighlight2}</Text>
+                  </View>
+                </ScrollView>
+          :
+            <Text/>
+              }
+
 
         <Text style={styles.permaText}>BILL INTRODUCED</Text>
         <Text style={styles.billDate}>{this.props.billDate}</Text>
         <Text style={styles.permaText}>SPONSOR</Text>
         <Text style={this.props.party ===  'democrat' ? styles.democrat : styles.republican}>{this.props.billSponsor}</Text>
-      </View>
+      </TouchableOpacity>
     )
   }
 })
@@ -120,5 +136,11 @@ const styles = StyleSheet.create({
     color: 'green',
     fontSize: 16,
     marginBottom: 20
+  },
+  hidden: {
+    flex: 1
+  },
+  show: {
+    flex: 1
   }
 })
