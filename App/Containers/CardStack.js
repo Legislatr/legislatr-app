@@ -29,10 +29,17 @@ class CardStack extends React.Component {
 
   render () {
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
         <View style={styles.cardStack}>
-          <Text>CardStack</Text>
-          <Tinder style={{flex: 1}} />
+          <Tinder style={{flex: 1}}
+                  data={[
+                    {text: 'Tomato', backgroundColor: 'white'},
+                    {text: 'Aubergine', backgroundColor: 'white'},
+                    {text: 'Courgette', backgroundColor: 'white'},
+                    {text: 'Blueberry', backgroundColor: 'white'},
+                    {text: 'Umm...', backgroundColor: 'white'},
+                    {text: 'orange', backgroundColor: 'white'},
+                    ]}/>
         </View>
         <View style={styles.buttons}>
           <View style={styles.buttonsLeft}>
@@ -42,7 +49,7 @@ class CardStack extends React.Component {
             <Text>BR</Text>
           </View>
         </View>
-      </ScrollView>
+      </View>
     )
   }
 }

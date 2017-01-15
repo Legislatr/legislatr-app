@@ -13,19 +13,12 @@ let Card = React.createClass({
   }
 })
 
-const Cards = [
-  {text: 'Tomato', backgroundColor: 'red'},
-  {text: 'Aubergine', backgroundColor: 'purple'},
-  {text: 'Courgette', backgroundColor: 'green'},
-  {text: 'Blueberry', backgroundColor: 'blue'},
-  {text: 'Umm...', backgroundColor: 'cyan'},
-  {text: 'orange', backgroundColor: 'orange'},
-]
+// const Cards = { this.props.data }
 
 export default React.createClass({
   getInitialState() {
     return {
-      cards: Cards
+      cards: [] // Cards -- don't need, see line 16
     }
   },
   handleYup (card) {
@@ -37,7 +30,7 @@ export default React.createClass({
   render() {
     return (
       <SwipeCards
-        cards={this.state.cards}
+        cards={this.props.data}
 
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
