@@ -38,6 +38,11 @@ let Card = React.createClass({
               <View>
                 <Text style={styles.expanded}>{this.props.billExpandedBlock}</Text>
                 <Text style={styles.permaText}>PEOPLE WHO SUPPORTED THIS BILL</Text>
+                <Image style={styles.paddingBottom} source={Images.social} />
+                <Text style={styles.permaText}>DO YOU SUPPORT THIS BILL?</Text>
+                <Image style={styles.paddingBottom} source={Images.thumbsupDown} />
+                <Image style={styles.paddingBottom} source={Images.setAlerts} />
+
 
               </View>
             </ScrollView>
@@ -83,10 +88,13 @@ export default React.createClass({
 })
 
 const styles = StyleSheet.create({
+  paddingBottom: {
+    paddingBottom: 10, marginBottom: 10
+  },
   expanded: {
     fontSize: 13,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 4,
+    paddingRight: 4,
     paddingTop: 0,
     marginTop: 0,
     marginBottom: 10
@@ -114,8 +122,9 @@ const styles = StyleSheet.create({
   billTitle: {
     fontWeight: 'bold',
     fontSize: 18,
-    padding: 10,
-    marginBottom: 30,
+    paddingLeft: 2,
+    paddingRight: 2,
+    marginBottom: 15,
     marginTop: 20
   },
   billHighlight: {
@@ -133,7 +142,8 @@ const styles = StyleSheet.create({
   },
   permaText: {
     fontSize: 14,
-    color: '#999'
+    color: '#999',
+    paddingBottom: 5
   },
   star: {
     flexDirection: 'row'

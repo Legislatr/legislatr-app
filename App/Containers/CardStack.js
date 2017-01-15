@@ -42,7 +42,7 @@ class CardStack extends React.Component {
                       billDate: 'January 3, 2017',
                       billSponsor: 'Rep. Mike Huckabee (ND)',
                       party: 'republican',
-                      billExpandedBlock: 'Lorem ipsum dolor sit amet, efficitur lobortis massa. Proin iaculis non magna  eget leo a aliquet. blandit bibendum, mauris sapien mattis...   Read More'
+                      billExpandedBlock: 'Lorem ipsum dolor sit ipsum dolor sit amet,Lorem ipsum dolor sit amet  efficitur lobortis massa. Proin iaculis non magna  eget leo a aliquet. blandit bibendum, mauris sapien mattis...   Read More'
 
                   },
                     {
