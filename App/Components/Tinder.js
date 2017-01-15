@@ -78,9 +78,10 @@ export default React.createClass({
     return (
       <SwipeCards
         cards={this.props.data}
-        handleYup={this.props.handleYup}
+
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
+        handleYup={this.handleYup}
         handleNope={this.handleNope}
         noText={"Don't Care"}
         yupText={"I'm Interested"}
