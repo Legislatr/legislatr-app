@@ -19,6 +19,7 @@ let Card = React.createClass({
         <Text style={styles.billTitle}>{this.props.billTitle}</Text>
         {  this.state.preview
            ?  <ScrollView>
+                <View style={styles.centered}>
                   <View style={styles.star}>
                     <Image source={Images.explodingStar} style={styles.starSpace}/>
                     <Text style={styles.billHighlight}>{this.props.billHighlight1}</Text>
@@ -27,14 +28,17 @@ let Card = React.createClass({
                     <Image source={Images.explodingStar} style={styles.starSpace}/>
                     <Text style={styles.billHighlight}>{this.props.billHighlight2}</Text>
                   </View>
-                  <Text style={styles.permaText}>BILL INTRODUCED</Text>
-                  <Text style={styles.billDate}>{this.props.billDate}</Text>
-                  <Text style={styles.permaText}>SPONSOR</Text>
-                  <Text style={this.props.party ===  'democrat' ? styles.democrat : styles.republican}>{this.props.billSponsor}</Text>
+                    <Text style={styles.permaText}>BILL INTRODUCED</Text>
+                    <Text style={styles.billDate}>{this.props.billDate}</Text>
+                    <Text style={styles.permaText}>SPONSOR</Text>
+                    <Text style={this.props.party ===  'democrat' ? styles.democrat : styles.republican}>{this.props.billSponsor}</Text>
+                    </View>
                 </ScrollView>
           : <ScrollView>
               <View>
-                <Text>{this.props.billExpandedBlock}</Text>
+                <Text style={styles.expanded}>{this.props.billExpandedBlock}</Text>
+                <Text style={styles.permaText}>PEOPLE WHO SUPPORTED THIS BILL</Text>
+
               </View>
             </ScrollView>
         }
@@ -79,6 +83,14 @@ export default React.createClass({
 })
 
 const styles = StyleSheet.create({
+  expanded: {
+    fontSize: 13,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 0,
+    marginTop: 0,
+    marginBottom: 10
+  },
   card: {
     flex: 1,
     padding: 10,
