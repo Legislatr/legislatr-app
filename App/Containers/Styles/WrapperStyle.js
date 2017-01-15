@@ -7,7 +7,6 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Metrics.navBarHeight,
-    paddingBottom: Metrics.doubleBaseMargin,
     backgroundColor: '#e6f0ff'
   }
 })
