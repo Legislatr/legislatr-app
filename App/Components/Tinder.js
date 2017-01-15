@@ -19,19 +19,22 @@ let Card = React.createClass({
         <Text style={styles.billTitle}>{this.props.billTitle}</Text>
         {  this.state.preview
            ?  <ScrollView>
-                <View style={styles.centered}>
+                <View style={[styles.centered, styles.paddingTop]}>
                   <View style={styles.star}>
                     <Image source={Images.explodingStar} style={styles.starSpace}/>
                     <Text style={styles.billHighlight}>{this.props.billHighlight1}</Text>
                   </View>
-                  <View style={[styles.star, styles.bottomMargin]}>
+                  <View style={styles.star}>
                     <Image source={Images.explodingStar} style={styles.starSpace}/>
                     <Text style={styles.billHighlight}>{this.props.billHighlight2}</Text>
                   </View>
-                    <Text style={styles.permaText}>BILL INTRODUCED</Text>
+                    <Text style={[styles.permaText, styles.paddingTop]}>BILL INTRODUCED</Text>
                     <Text style={styles.billDate}>{this.props.billDate}</Text>
                     <Text style={styles.permaText}>SPONSOR</Text>
                     <Text style={this.props.party ===  'democrat' ? styles.democrat : styles.republican}>{this.props.billSponsor}</Text>
+                    <View style={styles.dots}>
+                      <Image source={Images.dots}/>
+                    </View>
                     </View>
                 </ScrollView>
           : <ScrollView>
@@ -41,7 +44,7 @@ let Card = React.createClass({
                 <Image style={styles.paddingBottom} source={Images.social} />
                 <Text style={styles.permaText}>DO YOU SUPPORT THIS BILL?</Text>
                 <Image style={styles.paddingBottom} source={Images.thumbsupDown} />
-                <Image style={styles.paddingBottom} source={Images.setAlerts} />
+                <Image style={[styles.paddingBottom, styles.paddingTopMore]} source={Images.alerts} />
 
 
               </View>
@@ -90,6 +93,12 @@ export default React.createClass({
 const styles = StyleSheet.create({
   paddingBottom: {
     paddingBottom: 10, marginBottom: 10
+  },
+  paddingTop: {
+    paddingTop: 30
+  },
+  paddingTopMore: {
+    marginTop: 10
   },
   expanded: {
     fontSize: 13,
@@ -146,7 +155,9 @@ const styles = StyleSheet.create({
     paddingBottom: 5
   },
   star: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    paddingLeft: 0,
+    marginLeft: 0
   },
   starSpace: {
     marginRight: 10
@@ -172,5 +183,9 @@ const styles = StyleSheet.create({
   },
   show: {
     flex: 1
+  },
+  dots: {
+    marginTop: 10,
+    alignItems: 'flex-end'
   }
 })

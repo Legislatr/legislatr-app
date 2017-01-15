@@ -9,12 +9,12 @@ export default StyleSheet.create({
     paddingTop: 0
   },
   cardStack: {
-    height: 410,
-    marginBottom: 20
+    height: 445,
+    marginBottom: 10
   },
   buttons: {
     flexDirection: 'row',
-    height: 80,
+    height: 90
   },
   buttonsLeft: {
     flex: 1,
