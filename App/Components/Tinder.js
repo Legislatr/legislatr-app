@@ -2,6 +2,8 @@ import React from 'react'
 import {StyleSheet, Text, View, ScrollView, Image, TouchableView, TouchableOpacity} from 'react-native'
 import { Images } from '../Themes'
 import SwipeCards from 'react-native-swipe-cards'
+import addedBillsActions, { addBill } from '../Redux/addedBillsRedux'
+
 
 let Card = React.createClass({
   // card needs to have click/touch event handler
@@ -66,8 +68,8 @@ export default React.createClass({
       cards: [] // Cards -- don't need, see line 16
     }
   },
-  handleYup (card) {
-    console.log(`Yup for ${card.text}`)
+  handleYup (bill) {
+
   },
   handleNope (card) {
     console.log(`Nope for ${card.text}`)
@@ -76,14 +78,12 @@ export default React.createClass({
     return (
       <SwipeCards
         cards={this.props.data}
-
+        handleYup={this.props.handleYup}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
-
-        handleYup={this.handleYup}
         handleNope={this.handleNope}
         noText={"Don't Care"}
-        yesText={"I'm Interested"}
+        yupText={"I'm Interested"}
         containerStyle={styles.container}
       />
     )

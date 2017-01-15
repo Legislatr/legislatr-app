@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 import { Actions as NavigationActions } from 'react-native-router-flux'
+import addedBillsActions, { addBill } from '../Redux/addedBillsRedux'
 
 // Styles
 import styles from './Styles/CardStackStyle'
@@ -34,6 +35,7 @@ class CardStack extends React.Component {
         <View style={styles.cardStack}>
           <Tinder style={{flex: 1}}
                   loop={true}
+                  handleYup={this.props.addBill}
                   data={[
                     {
                       billTitle: 'Minimum Wage - Original Living Wage Act of 2017',
@@ -42,7 +44,7 @@ class CardStack extends React.Component {
                       billDate: 'January 3, 2017',
                       billSponsor: 'Rep. Mike Huckabee (ND)',
                       party: 'republican',
-                      billExpandedBlock: 'Lorem ipsum dolor sit ipsum dolor sit amet,Lorem ipsum dolor sit amet  efficitur lobortis massa. Proin iaculis non magna  eget leo a aliquet. blandit bibendum, mauris sapien mattis...   Read More'
+                      billExpandedBlock: 'Lorem ipsum dolor sit ipsum dolor sit amet,Lorem ipsum dolor sit amet  efficitur lobortis massa. Proin iaculis non magna  eget leo a aliquet. blandit bibendum, mauris sapien mattis...   Read More',
 
                   },
                     {
@@ -80,12 +82,23 @@ class CardStack extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    addedBills: state.addedBills.addedBills
   }
 }
 
+// this.props.addBill
+
 const mapDispatchToProps = (dispatch) => {
   return {
+
   }
 }
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     logout: () => dispatch(LoginActions.logout()),
+//     requestTemperature: (city) => dispatch(TemperatureActions.temperatureRequest(city))
+//   }
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardStack)

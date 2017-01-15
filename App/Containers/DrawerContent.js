@@ -60,10 +60,17 @@ class DrawerContent extends Component {
   render () {
     return (
       <ScrollView style={styles.container}>
+
       </ScrollView>
     )
   }
 
+}
+
+const mapStateToProps = (state) => {
+  return {
+    addedBills: state.addedBills
+  }
 }
 
 DrawerContent.contextTypes = {

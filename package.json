@@ -60,7 +60,7 @@
     "react-dom": "^15.4.0",
     "react-native-mock": "^0.2.8",
     "reactotron-apisauce": "^1.5.2",
-    "reactotron-react-native": "^1.5.2",
+    "reactotron-react-native": "^1.6.0",
     "reactotron-redux": "^1.5.2",
     "reactotron-redux-saga": "^1.5.2",
     "snazzy": "^5.0.0",
