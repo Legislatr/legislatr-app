@@ -18,8 +18,7 @@ let Card = React.createClass({
       <TouchableOpacity style={styles.card} onPress={this.handlePressPreview}>
         <Text style={styles.billTitle}>{this.props.billTitle}</Text>
         {  this.state.preview
-           ?
-                <ScrollView>
+           ?  <ScrollView>
                   <View style={styles.star}>
                     <Image source={Images.explodingStar} style={styles.starSpace}/>
                     <Text style={styles.billHighlight}>{this.props.billHighlight1}</Text>
@@ -28,16 +27,20 @@ let Card = React.createClass({
                     <Image source={Images.explodingStar} style={styles.starSpace}/>
                     <Text style={styles.billHighlight}>{this.props.billHighlight2}</Text>
                   </View>
+                  <Text style={styles.permaText}>BILL INTRODUCED</Text>
+                  <Text style={styles.billDate}>{this.props.billDate}</Text>
+                  <Text style={styles.permaText}>SPONSOR</Text>
+                  <Text style={this.props.party ===  'democrat' ? styles.democrat : styles.republican}>{this.props.billSponsor}</Text>
                 </ScrollView>
-          :
-            <Text/>
-              }
+          : <ScrollView>
+              <View>
+                <Text>{this.props.billExpandedBlock}</Text>
+              </View>
+            </ScrollView>
+        }
 
 
-        <Text style={styles.permaText}>BILL INTRODUCED</Text>
-        <Text style={styles.billDate}>{this.props.billDate}</Text>
-        <Text style={styles.permaText}>SPONSOR</Text>
-        <Text style={this.props.party ===  'democrat' ? styles.democrat : styles.republican}>{this.props.billSponsor}</Text>
+
       </TouchableOpacity>
     )
   }
@@ -84,6 +87,11 @@ const styles = StyleSheet.create({
     height: 300,
     backgroundColor: 'white',
     borderRadius: 15
+  },
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container: {
     flex: 1,
