@@ -4,13 +4,16 @@ import {Colors} from '../../Themes/'
 
 export default {
   container: {
-    flex: 1
+    flex: 1,
+    marginBottom: 0,
   },
   navBar: {
-    backgroundColor: 'black'
+    backgroundColor: '#e6f0ff'
   },
   title: {
-    color: Colors.snow
+    color: '#002966',
+    fontSize: 24,
+    fontWeight: 'bold'
   },
   leftButton: {
     tintColor: Colors.snow

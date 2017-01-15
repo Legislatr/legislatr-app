@@ -7,8 +7,9 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 0,
-    backgroundColor: 'orange',
-    height: 30,
+    marginTop: 0,
+    backgroundColor: 'transparent',
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center'
   },

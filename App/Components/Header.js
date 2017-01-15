@@ -1,17 +1,17 @@
 // @flow
 
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import styles from './Styles/HeaderStyle'
+import { Images } from '../Themes'
+
 
 export default class Header extends React.Component {
 
   render () {
     return (
       <View style={styles.container}>
-        <View style={styles.headerText}>
-          <Text>Federal | Local</Text>
-        </View>
+        <Image source={Images.segmented} />
       </View>
     )
   }

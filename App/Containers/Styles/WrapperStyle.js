@@ -8,6 +8,6 @@ export default StyleSheet.create({
     flex: 1,
     marginTop: Metrics.navBarHeight,
     paddingBottom: Metrics.doubleBaseMargin,
-    backgroundColor: '#eee'
+    backgroundColor: '#e6f0ff'
   }
 })
