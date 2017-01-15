@@ -34,7 +34,8 @@ local.properties
 #
 node_modules/
 npm-debug.log
-
+ios/
+android/
 # BUCK
 buck-out/
 \.buckd/
