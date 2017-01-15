@@ -30,7 +30,7 @@ export default {
   hamburgerButton () {
     return (
       <TouchableOpacity onPress={openDrawer}>
-        <Icon name='bars'
+        <Icon name='file-text-o'
           size={Metrics.icons.small}
           color={Colors.snow}
           style={styles.navButtonLeft}
